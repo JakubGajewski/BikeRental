@@ -8,7 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="bike_rental_application" />
         <module name="bike_rental_domain" />
+        <module name="bike_rental_webapp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bike_rental_webapp" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

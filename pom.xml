@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.jg</groupId>
-    <artifactId>Bike_Rental</artifactId>
+    <artifactId>BikeRental</artifactId>
     <version>1.0-SNAPSHOT</version>
     <url>www.jakubgajewski.pl</url>
     <description>pl.jg.bike_rental.domain.Bike Rental Application</description>
@@ -14,6 +14,8 @@
         <module>bike_rental_domain</module>
         <module>bike_rental_application</module>
         <module>bike_rental_webapp</module>
+        <module>bike_rental_webapp</module>
+        <!--<module>bike_rental_webapp</module>-->
     </modules>
 
 </project>
