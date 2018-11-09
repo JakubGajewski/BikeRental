@@ -1,26 +1,25 @@
 package pl.jg.bike_rental.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Bike {
+
+    @Id
     private Integer id;
+
     private String model;
-    private Size size;
+
+    @Column(name="bike_size")
+    private BikeSize bikeSize;
+
+    @Column(name="bike_type")
     private BikeType bikeType;
 
-    public void dupa () {
-        if (this.size.equals(Size.L)) {
-            System.out.println("dupa");
-        }
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private Boolean rented;
 
     public String getModel() {
         return model;
@@ -30,12 +29,12 @@ public class Bike {
         this.model = model;
     }
 
-    public Size getSize() {
-        return size;
+    public BikeSize getBikeSize() {
+        return bikeSize;
     }
 
-    public void setSize(Size size) {
-        this.size = size;
+    public void setBikeSize(BikeSize bikeSize) {
+        this.bikeSize = bikeSize;
     }
 
     public BikeType getBikeType() {
@@ -46,11 +45,15 @@ public class Bike {
         this.bikeType = bikeType;
     }
 
-    public Bike(Integer id, String model, Size size, BikeType bikeType) {
-        this.id = id;
-        this.model = model;
-        this.size = size;
-        this.bikeType = bikeType;
+    public Boolean isRented() {
+        return rented;
+    }
+
+    public void setRented(Boolean rented) {
+        this.rented = rented;
+    }
+
+    public Bike() {
     }
 
     @Override
@@ -60,14 +63,15 @@ public class Bike {
         Bike bike = (Bike) o;
         return Objects.equals(id, bike.id) &&
                 Objects.equals(model, bike.model) &&
-                size == bike.size &&
-                bikeType == bike.bikeType;
+                bikeSize == bike.bikeSize &&
+                bikeType == bike.bikeType &&
+                Objects.equals(rented, bike.rented);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, model, size, bikeType);
+        return Objects.hash(id, model, bikeSize, bikeType, rented);
     }
 
     @Override
@@ -75,8 +79,9 @@ public class Bike {
         return "Bike{" +
                 "id=" + id +
                 ", model='" + model + '\'' +
-                ", size=" + size +
+                ", bikeSize=" + bikeSize +
                 ", bikeType=" + bikeType +
+                ", rented=" + rented +
                 '}';
     }
 }

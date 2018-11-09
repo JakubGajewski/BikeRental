@@ -10,4 +10,8 @@ public interface BikeDao {
 
     public List<Bike> getBikes();
 
+    public void rentBike (Bike bike);
+
+    public void deleteBike (Integer id);
+
 }
