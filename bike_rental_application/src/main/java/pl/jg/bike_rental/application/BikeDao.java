@@ -1,4 +1,4 @@
-package pl.jg.bike_rental;
+package pl.jg.bike_rental.application;
 
 import pl.jg.bike_rental.domain.Bike;
 

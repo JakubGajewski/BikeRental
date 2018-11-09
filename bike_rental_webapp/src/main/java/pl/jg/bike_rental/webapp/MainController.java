@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.jg.bike_rental.BikeDao;
+import pl.jg.bike_rental.application.BikeDao;
 import pl.jg.bike_rental.domain.Bike;
 import javax.validation.Valid;
 

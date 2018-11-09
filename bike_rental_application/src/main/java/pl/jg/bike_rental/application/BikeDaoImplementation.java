@@ -1,4 +1,4 @@
-package pl.jg.bike_rental;
+package pl.jg.bike_rental.application;
 
 import org.springframework.stereotype.Repository;
 import pl.jg.bike_rental.domain.Bike;
