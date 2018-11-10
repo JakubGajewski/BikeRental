@@ -1,3 +1,3 @@
-Application for managing a bike rental.
-Design patterns: DAO, DTO, MVC (multi-module application).
-Used technologies: Spring Core & MVC, Hibernate, JSP with EL.
+Application for managing a bike rental;
+Technologies: Java, Spring Core & MVC, Hibernate ORM & validation, JSP with EL;
+Design patterns: DAO, DTO, MVC (multi-module application)
