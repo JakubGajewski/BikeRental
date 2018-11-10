@@ -1,25 +1,35 @@
 package pl.jg.bike_rental.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name="bike")
 public class Bike {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //???
     private Integer id;
 
     private String model;
 
     @Column(name="bike_size")
+    @Enumerated(EnumType.STRING)
     private BikeSize bikeSize;
 
     @Column(name="bike_type")
+    @Enumerated(EnumType.STRING)
     private BikeType bikeType;
 
     private Boolean rented;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getModel() {
         return model;
@@ -45,7 +55,7 @@ public class Bike {
         this.bikeType = bikeType;
     }
 
-    public Boolean isRented() {
+    public Boolean getRented() {
         return rented;
     }
 

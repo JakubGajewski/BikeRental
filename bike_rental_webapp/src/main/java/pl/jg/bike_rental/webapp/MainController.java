@@ -1,6 +1,7 @@
 package pl.jg.bike_rental.webapp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,7 +17,7 @@ public class MainController {
     private BikeDao bikeDaoImplementation;
 
     @RequestMapping("/")
-    public String index(Model model) {
+    public String index (Model model) {
         model.addAttribute("bikes", bikeDaoImplementation.getBikes());
         return "index";
     }
@@ -44,5 +45,32 @@ public class MainController {
     @RequestMapping("/error")
     public String error() {
         return "error";
+    }
+
+
+    @RequestMapping("/changeRent/{bikeId}")
+    public String changeRent(@PathVariable("bikeId") String stringBikeId) {
+        try {
+            int intBikeId = Integer.parseInt(stringBikeId);
+            bikeDaoImplementation.changeRented(intBikeId);
+        } catch (NumberFormatException nFE) {
+            return "redirect:/error";
+        }
+        return "redirect:/";
+    }
+
+    @RequestMapping("/deleteBike/{bikeId}")
+    public String deleteBike(@PathVariable("bikeId") String stringBikeId) {
+        try {
+            int intBikeId = Integer.parseInt(stringBikeId);
+            bikeDaoImplementation.deleteBike(intBikeId);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return "redirect:/error";
+        } catch (InvalidDataAccessApiUsageException e) {
+            e.printStackTrace();
+            return "redirect:/error";
+        }
+        return "redirect:/";
     }
 }
