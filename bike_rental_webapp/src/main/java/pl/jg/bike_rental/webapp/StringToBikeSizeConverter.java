@@ -9,7 +9,7 @@ public class StringToBikeSizeConverter implements Converter<String, BikeSize> {
     @Override
     public BikeSize convert(String from) {
         BikeSize bikeSize;
-        switch (from) {
+        switch (from.toUpperCase()) {
             case "XS":
                 bikeSize = BikeSize.XS;
                 break;
