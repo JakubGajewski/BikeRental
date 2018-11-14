@@ -40,6 +40,7 @@
             <set>
                 <bean class="pl.jg.bike_rental.webapp.StringToBikeTypeConverter"></bean>
                 <bean class="pl.jg.bike_rental.webapp.StringToBikeSizeConverter"></bean>
+                <bean class="pl.jg.bike_rental.webapp.StringToLocalDateConverter"></bean>
             </set>
         </property>
     </bean>

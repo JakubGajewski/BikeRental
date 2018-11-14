@@ -5,6 +5,7 @@ import pl.jg.bike_rental.domain.BikeSize;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 public class BikeForm {
 
@@ -16,6 +17,9 @@ public class BikeForm {
 
     @NotNull
     private BikeType bikeType;
+
+    @NotNull
+    private LocalDate dupa;
 
     public String getModel() {
         return model;
@@ -39,5 +43,13 @@ public class BikeForm {
 
     public void setBikeType(BikeType bikeType) {
         this.bikeType = bikeType;
+    }
+
+    public LocalDate getDupa() {
+        return dupa;
+    }
+
+    public void setDupa(LocalDate dupa) {
+        this.dupa = dupa;
     }
 }

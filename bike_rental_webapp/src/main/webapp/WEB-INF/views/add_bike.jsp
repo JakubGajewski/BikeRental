@@ -23,6 +23,8 @@
             M <form:radiobutton path="bikeSize" value="M"></form:radiobutton>
             L <form:radiobutton path="bikeSize" value="L"></form:radiobutton>
             XL <form:radiobutton path="bikeSize" value="XL"></form:radiobutton></br>
+            Dupa:
+            <form:input path="dupa" id="dupa"/></br>
             <button>Submit</button>
         </form:form>
     </table>
